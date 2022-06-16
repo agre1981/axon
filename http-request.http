@@ -6,10 +6,10 @@ POST http://localhost:8090/orders
 Content-Type: application/json
 
 {
-  "name": "order1"
+  "name": "order5"
 }
 
 ###
-DELETE http://localhost:8090/orders/order1
+DELETE http://localhost:8090/orders/order5
 Accept: application/json
 

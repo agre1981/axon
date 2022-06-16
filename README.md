@@ -1,5 +1,7 @@
 # Getting Started
 
+### Quick Start
+
 1. Run Exon Server (http://localhost:8024/)
 ```
 docker-compose -f src/main/docker/docker-compose-axonserver-se.yml up
@@ -18,10 +20,8 @@ Content-Type: application/json
   "name": "order1"
 }
 
+DELETE http://localhost:8090/orders/order1
 ```
-
-
-### Quick Start
 
 ### Reference Documentation
 For further reference, please consider the following sections:

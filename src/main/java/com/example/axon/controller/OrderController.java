@@ -2,6 +2,7 @@ package com.example.axon.controller;
 
 import com.example.axon.api.CreateOrderDTO;
 import com.example.axon.api.OrderAggregate;
+import com.example.axon.command.CancelOrderCommand;
 import com.example.axon.command.CreateOrderCommand;
 import com.example.axon.query.FindAllOrdersQuery;
 import com.example.axon.query.OrderView;
@@ -11,7 +12,6 @@ import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
 import org.springframework.http.MediaType;
-import org.springframework.util.MimeType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,6 +33,11 @@ public class OrderController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     CompletableFuture<?> createOrder(@RequestBody CreateOrderDTO request) {
         return commandGateway.send(new CreateOrderCommand(request.getName()));
+    }
+
+    @DeleteMapping("/{name}")
+    CompletableFuture<?> deleteOrder(@PathVariable String name) {
+        return commandGateway.send(new CancelOrderCommand(name));
     }
 
 }

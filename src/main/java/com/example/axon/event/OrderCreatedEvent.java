@@ -1,4 +1,4 @@
-package com.example.axon.command;
+package com.example.axon.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
