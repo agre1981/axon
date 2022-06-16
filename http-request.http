@@ -1,0 +1,15 @@
+GET http://localhost:8090/orders
+Accept: application/json
+
+###
+POST http://localhost:8090/orders
+Content-Type: application/json
+
+{
+  "name": "order1"
+}
+
+###
+DELETE http://localhost:8090/orders/order1
+Accept: application/json
+
