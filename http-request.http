@@ -1,15 +1,16 @@
+### Get all orders
 GET http://localhost:8090/orders
 Accept: application/json
 
-###
+### Create a new order
 POST http://localhost:8090/orders
 Content-Type: application/json
 
 {
-  "name": "order5"
+  "name": "order8"
 }
 
-###
+### Delete an order
 DELETE http://localhost:8090/orders/order5
 Accept: application/json
 
